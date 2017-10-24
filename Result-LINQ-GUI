@@ -1,0 +1,18 @@
+Objective:  Display the result of LINQ in GUI 
+ 
+Display the customerID and CompanyName in datagridview 
+ 
+-	Add new form in your project 
+-	Change the text property of your windows form to = “frm1 - Display CustomerID and Company Name” 
+-	Add datagridview into your form, change the name property to dgvCustomerName - 	Change the following properties: 
+  
+ 
+Double click on your form and insert the following code (the heighted yellow): 
+Public Class frmCustomerName 
+  Dim db As New NorthWindDataContext 
+Private Sub frmCustomerName_Load(ByVal sender As System.Object, ByVal e As 
+System.EventArgs) Handles MyBase.Load 
+	      	Dim customersQuery = _ 
+From cust In db.Customers 
+Select cust.CustomerID, cust.CompanyName Order By CompanyName dgvCustomerName.DataSource = customersQuery  End Sub 
+End Class 
